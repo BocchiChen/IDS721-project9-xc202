@@ -20,6 +20,7 @@ def main():
 
     # Add a title to the app
     st.title("Language Model App")
+    st.markdown("---")
 
     # Add a description
     st.write(
@@ -32,16 +33,17 @@ def main():
         user_input = st.text_area("Type here", "Once upon a time,")
 
     # Translate user input if it's in Chinese
-    # if user_input.strip() and 0x4e00 <= ord(user_input[0]) <= 0x9fff:
-    #     user_input = translator(user_input, max_length=100)[0]["translation_text"]
+    if user_input.strip() and 0x4e00 <= ord(user_input[0]) <= 0x9fff:
+        user_input = translator(user_input, max_length=100)[0]["translation_text"]
 
     # Add a button to trigger text generation
-    if st.button("Generate Text"):
+    if st.button("🚀 Generate Text"):
         # Generate text based on user input
         generated_text = model(user_input, max_length=100)[0]["generated_text"]
 
         # Display the generated text
-        st.subheader("Generated Text:")
+        st.markdown("---")
+        st.subheader("📣 Generated Text:")
         st.write(generated_text)
 
 
