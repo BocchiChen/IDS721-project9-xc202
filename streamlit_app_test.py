@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Load the ChatGPT conversational model
-model = pipeline("conversational")
+model = pipeline("conversational", model="microsoft/DialoGPT-medium")
 
 # Load the language model for translation
 # translator = pipeline("translation", model="Helsinki-NLP/opus-mt-zh-en")
