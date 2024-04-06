@@ -2,10 +2,10 @@ import streamlit as st
 from transformers import pipeline
 
 # Load the ChatGPT conversational model
-model = pipeline("conversational", model="microsoft/DialoGPT-large")
+model = pipeline("conversational")
 
 # Load the language model for translation
-translator = pipeline("translation", model="Helsinki-NLP/opus-mt-zh-en")
+# translator = pipeline("translation", model="Helsinki-NLP/opus-mt-zh-en")
 
 
 # Define Streamlit app with enhanced aesthetics, additional content, and fancy styling
@@ -33,8 +33,8 @@ def main():
         user_input = st.text_area("Type here", "Hi, how are you?")
 
     # Translate user input if it's in Chinese
-    if user_input.strip() and 0x4e00 <= ord(user_input[0]) <= 0x9fff:
-        user_input = translator(user_input, max_length=100)[0]["translation_text"]
+    # if user_input.strip() and 0x4e00 <= ord(user_input[0]) <= 0x9fff:
+    #     user_input = translator(user_input, max_length=100)[0]["translation_text"]
 
     # Convert user input to conversation format
     conversation = [
