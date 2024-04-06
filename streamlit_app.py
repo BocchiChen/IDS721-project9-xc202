@@ -1,14 +1,10 @@
 import streamlit as st
 from transformers import pipeline
 
-available_models = {
-    "GPT-2": "gpt2",
-    "OpenAI GPT": "openai-gpt",
-}
-
 # Load the language model
-default_model = available_models["OpenAI GPT"]
-model = pipeline("text-generation", model=default_model)
+model = pipeline("text-generation", model="openai-gpt")
+
+sentiment_analysis_model = pipeline("sentiment-analysis")
 
 
 # Define Streamlit app with enhanced aesthetics, additional content, and fancy styling
@@ -32,23 +28,24 @@ def main():
 
     # Add a sidebar for user input
     with st.sidebar:
-        st.subheader("Select Model:")
-        selected_model = st.selectbox("Choose a model", list(available_models.keys()), index=list(available_models.keys()).index("OpenAI GPT"))
         st.subheader("Enter Your Prompt:")
         user_input = st.text_area("Type here in English", "Once upon a time,")
-
-    model_name = available_models[selected_model]
-    text_generation_model = pipeline("text-generation", model=model_name)
 
     # Add a button to trigger text generation
     if st.button("🚀 Generate Text"):
         # Generate text based on user input
-        generated_text = text_generation_model(user_input, max_length=100)[0]["generated_text"]
+        generated_text = model(user_input, max_length=100)[0]["generated_text"]
+
+        # Perform sentiment analysis on the generated text
+        sentiment = sentiment_analysis_model(generated_text)[0]
 
         # Display the generated text
         st.markdown("---")
         st.subheader("📣 Generated Text:")
         st.write(generated_text)
+        st.markdown("---")
+        st.subheader("😊 Sentiment Analysis:")
+        st.write(sentiment)
 
 
 # Run the app
