@@ -35,7 +35,7 @@ def main():
         st.subheader("Select Model:")
         selected_model = st.selectbox("Choose a model", list(available_models.keys()), index=list(available_models.keys()).index("OpenAI GPT"))
         st.subheader("Enter Your Prompt:")
-        user_input = st.text_area("Type here", "Once upon a time,")
+        user_input = st.text_area("Type here in English", "Once upon a time,")
 
     model_name = available_models[selected_model]
     text_generation_model = pipeline("text-generation", model=model_name)
