@@ -48,4 +48,16 @@ You can use the app function by accessing the following Web URL:
 
 ![Screenshot 2024-04-06 at 12.30.38 AM.png](images%2FScreenshot%202024-04-06%20at%2012.30.38%20AM.png)
 
-### Project Setup
+### Project Deployment on Streamlit
+1. Access the official Streamlit website `https://streamlit.io/` and signin to your account.
+
+2. Create a new app connecting to the GitHub account.
+
+![Screenshot 2024-04-05 at 10.50.21 PM.png](images%2FScreenshot%202024-04-05%20at%2010.50.21%20PM.png)
+3. Deploy the app, the process can be slow. 
+
+![Screenshot 2024-04-05 at 10.52.18 PM.png](images%2FScreenshot%202024-04-05%20at%2010.52.18%20PM.png)
+
+4. Once the app has been deployed, you can access the streamlit application using the web url: https://ids721-project9-xc202-a6ykzvmpybhappizrvxs5su.streamlit.app/
+
+![Screenshot 2024-04-06 at 12.38.00 AM.png](images%2FScreenshot%202024-04-06%20at%2012.38.00%20AM.png)
