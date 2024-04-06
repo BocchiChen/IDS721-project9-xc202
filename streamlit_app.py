@@ -5,7 +5,7 @@ from transformers import pipeline
 model = pipeline("text-generation", model="openai-gpt")
 
 # Load the language model for translation
-# translator = pipeline("translation", model="Helsinki-NLP/opus-mt-zh-en")
+translator = pipeline("translation", model="Helsinki-NLP/opus-mt-zh-en")
 
 
 # Define Streamlit app with enhanced aesthetics, additional content, and fancy styling
