@@ -15,8 +15,40 @@ def main():
         initial_sidebar_state="expanded"
     )
 
+    # Add custom CSS styles
+    st.markdown(
+        """
+        <style>
+            .title {
+                color: #1E90FF; 
+                font-size: 36px; 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            .generated-text {
+                font-size: 18px; 
+                line-height: 1.5; 
+                text-align: justify; 
+                padding: 20px; 
+                border: 5px solid #1E90FF; 
+                border-radius: 10px; 
+                background-color: #f8f8ff;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
+                color: #333333; 
+            }
+
+            .sidebar .sidebar-content {
+                background-color: #f0f0f0; 
+                border-radius: 10px; 
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     # Add a title to the app
-    st.title("Language Model App")
+    st.markdown("<h1 class='title'>Language Model App</h1>", unsafe_allow_html=True)
     st.markdown("---")
 
     # Add a description
@@ -37,7 +69,7 @@ def main():
         # Display the generated text
         st.markdown("---")
         st.subheader("📣 Generated Text:")
-        st.write(generated_text)
+        st.markdown("<div class='generated-text'>" + generated_text + "</div>", unsafe_allow_html=True)
 
 
 # Run the app
