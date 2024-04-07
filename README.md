@@ -58,6 +58,6 @@ You can use the app function by accessing the following Web URL:
 
 ![Screenshot 2024-04-05 at 10.52.18 PM.png](images%2FScreenshot%202024-04-05%20at%2010.52.18%20PM.png)
 
-4. Once the app has been deployed, you can access the streamlit application using the web url: https://ids721-project9-xc202-a6ykzvmpybhappizrvxs5su.streamlit.app/
+4. Once the app has been deployed, you can access the streamlit application using the web url: https://ids721-project9-xc202-byao4pryw27go8ilsnklhn.streamlit.app/
 
-![Screenshot 2024-04-06 at 12.38.00 AM.png](images%2FScreenshot%202024-04-06%20at%2012.38.00%20AM.png)
+![Screenshot 2024-04-06 at 9.52.37 PM.png](images%2FScreenshot%202024-04-06%20at%209.52.37%20PM.png)
